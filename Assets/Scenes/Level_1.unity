@@ -751,6 +751,7 @@ MonoBehaviour:
   preFab: {fileID: 7854287240566403132, guid: 1ea6bd9350d50894899d6d0e9622592e, type: 3}
   bulletTrash: {fileID: 1629114352}
   bulletSpam: {fileID: 1442179157}
+  preFab_2: {fileID: 7854287240566403132, guid: c04d19ace87b4e34dacf2bc5e7ee5964, type: 3}
 --- !u!1 &396652744
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject preFab;
     public Transform bulletTrash;
     public Transform bulletSpam;
-
+    public GameObject preFab_2;
     private const float Timer = 0.5f;
     private float _currentTime = 0.5f;
     private bool _canShoot = true;
@@ -19,13 +19,19 @@ public class PlayerShoot : MonoBehaviour
         }
 
 
-
-
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             GameObject bullet = Instantiate(preFab, bulletSpam.position, Quaternion.identity);
 
             bullet.transform.SetParent(bulletTrash);
+
+            _canShoot = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            GameObject bullet_2 = Instantiate(preFab_2, bulletSpam.position, Quaternion.identity);
+
+            bullet_2.transform.SetParent(bulletTrash);
 
             _canShoot = false;
         }
@@ -48,11 +54,15 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0) && _canShoot)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _canShoot)
         {
             GameObject bullet = Instantiate(preFab, bulletSpam.position, Quaternion.identity);
             bullet.transform.SetParent(bulletTrash);
             _canShoot = false;
+            GameObject bullet_2 = Instantiate(preFab_2, bulletSpam.position, Quaternion.identity);
+            bullet_2.transform.SetParent(bulletTrash);
+            _canShoot = false;
         }
     }
 }
+    
